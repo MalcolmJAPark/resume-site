@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Github, Mail, Phone, MapPin, GraduationCap, Globe, Briefcase, Code2, ExternalLink, Languages } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import profileImg from '@/assets/profile.webp'
 
 const Section = ({ id, title, children }) => (
   <section id={id} className="scroll-mt-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -10,20 +11,21 @@ const Section = ({ id, title, children }) => (
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="text-2xl sm:text-3xl font-semibold tracking-tight mb-6"
+      className="text-2xl sm:text-3xl font-semibold tracking-tight mb-6 flex items-center gap-3"
     >
-      {title}
+      <span className="inline-block h-2 w-2 rounded-full bg-accent"></span>
+      <span>{title}</span>
     </motion.h2>
     {children}
   </section>
 )
 
 const Pill = ({ children }) => (
-  <span className="inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium">{children}</span>
+  <span className="inline-flex items-center rounded-full border border-accent text-accent px-3 py-1 text-sm font-medium bg-accent/5">{children}</span>
 )
 
 const Anchor = ({ href, children }) => (
-  <a href={href} className="inline-flex items-center gap-1 underline-offset-2 hover:underline" target="_blank" rel="noreferrer">
+  <a href={href} className="inline-flex items-center gap-1 underline-offset-2 hover:underline text-accent" target="_blank" rel="noreferrer">
     {children} <ExternalLink className="h-4 w-4" />
   </a>
 )
@@ -31,14 +33,14 @@ const Anchor = ({ href, children }) => (
 const Header = () => (
   <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-neutral-900/60 border-b">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <a href="#home" className="font-semibold tracking-tight">Jooahn (Malcolm) Park</a>
+      <a href="#home" className="font-semibold tracking-tight text-accent">Jooahn (Malcolm) Park</a>
       <nav className="hidden md:flex items-center gap-6 text-sm">
-        <a href="#about" className="hover:opacity-80">About</a>
-        <a href="#education" className="hover:opacity-80">Education</a>
-        <a href="#skills" className="hover:opacity-80">Skills</a>
-        <a href="#experience" className="hover:opacity-80">Experience</a>
-        <a href="#projects" className="hover:opacity-80">Projects</a>
-        <a href="#contact" className="hover:opacity-80">Contact</a>
+        <a href="#about" className="hover:text-accent">About</a>
+        <a href="#education" className="hover:text-accent">Education</a>
+        <a href="#skills" className="hover:text-accent">Skills</a>
+        <a href="#experience" className="hover:text-accent">Experience</a>
+        <a href="#projects" className="hover:text-accent">Projects</a>
+        <a href="#contact" className="hover:text-accent">Contact</a>
       </nav>
       <div className="flex items-center gap-2">
         <a href="mailto:jop015@ucsd.edu" title="Email">
@@ -58,23 +60,34 @@ const Header = () => (
 const Hero = () => (
   <section id="home" className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
     <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-      <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs mb-5">
-        <Globe className="h-3.5 w-3.5" /> UC San Diego · La Jolla, CA
-      </div>
-      <h1 className="text-3xl sm:text-5xl font-bold tracking-tight leading-tight">
-        Jooahn (Malcolm) Park
-      </h1>
-      <p className="mt-3 text-lg text-muted-foreground">
-        B.S. Mathematics (Computer Science focus) · Data Science minor · UC San Diego (Sep 2025). I build reliable data & ML tools and clean, accessible web experiences.
-      </p>
-      <div className="mt-6 flex flex-wrap items-center gap-3">
-        <a href="#projects"><Button size="lg" className="rounded-2xl">See Projects</Button></a>
-        <a href="#contact"><Button size="lg" variant="outline" className="rounded-2xl">Get in touch</Button></a>
-      </div>
-      <div className="mt-6 flex flex-wrap gap-2">
-        <Pill><Languages className="h-4 w-4 mr-1" /> English · Korean (fluent)</Pill>
-        <Pill><Code2 className="h-4 w-4 mr-1" /> Python · Java · SQL · C++ (working) · Web Design</Pill>
-        <Pill>knowledgeable in</Pill>
+      <div className="flex items-start gap-6">
+        <img
+          src={profileImg}
+          alt="Profile photo of Jooahn (Malcolm) Park"
+          className="w-[160px] h-[200px] md:w-[180px] md:h-[220px] rounded-xl object-cover shadow"
+          decoding="async"
+          loading="eager"
+        />
+        <div className="flex-1">
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/5 px-3 py-1 text-xs mb-5">
+            <Globe className="h-3.5 w-3.5 text-accent" /> UC San Diego · La Jolla, CA
+          </div>
+          <h1 className="text-3xl sm:text-5xl font-bold tracking-tight leading-tight">
+            <span className="bg-clip-text text-transparent accent-gradient">Jooahn (Malcolm) Park</span>
+          </h1>
+          <p className="mt-3 text-lg text-muted-foreground">
+            B.S. Mathematics (Computer Science focus) · Data Science minor · UC San Diego (Sep 2025). I build reliable data & ML tools and clean, accessible web experiences.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <a href="#projects"><Button size="lg" className="rounded-2xl">See Projects</Button></a>
+            <a href="#contact"><Button size="lg" variant="outline" className="rounded-2xl">Get in touch</Button></a>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-2">
+            <Pill><Languages className="h-4 w-4 mr-1" /> English · Korean (fluent)</Pill>
+            <Pill><Code2 className="h-4 w-4 mr-1" /> Python · Java · SQL · C++ (working) · Web Design</Pill>
+            <Pill>Knowledgeable in DataFrames and Pandas</Pill>
+          </div>
+        </div>
       </div>
     </motion.div>
   </section>
@@ -83,10 +96,10 @@ const Hero = () => (
 const Education = () => (
   <Section id="education" title="Education">
     <div className="grid md:grid-cols-2 gap-6">
-      <Card className="rounded-2xl">
+      <Card className="rounded-2xl hover:shadow-accent">
         <CardHeader>
           <CardTitle className="flex items-center justify-between">
-            <span className="flex items-center gap-2"><GraduationCap className="h-5 w-5" /> University of California, San Diego</span>
+            <span className="flex items-center gap-2"><GraduationCap className="h-5 w-5 text-accent" /> University of California, San Diego</span>
             <span className="text-sm font-normal text-muted-foreground">Sep 2025 · La Jolla, CA</span>
           </CardTitle>
         </CardHeader>
@@ -96,10 +109,10 @@ const Education = () => (
           <div className="text-sm text-muted-foreground">Relevant: Algorithms, Probability/Stats, ML, Data Engineering, Econometrics.</div>
         </CardContent>
       </Card>
-      <Card className="rounded-2xl">
+      <Card className="rounded-2xl hover:shadow-accent">
         <CardHeader>
           <CardTitle className="flex items-center justify-between">
-            <span className="flex items-center gap-2"><GraduationCap className="h-5 w-5" /> Taejon Christian International School (TCIS)</span>
+            <span className="flex items-center gap-2"><GraduationCap className="h-5 w-5 text-accent" /> Taejon Christian International School (TCIS)</span>
             <span className="text-sm font-normal text-muted-foreground">May 2021 · Daejeon, South Korea</span>
           </CardTitle>
         </CardHeader>
@@ -162,7 +175,7 @@ const Experience = () => (
       <Card className="rounded-2xl">
         <CardHeader>
           <CardTitle className="flex items-center justify-between">
-            <span className="flex items-center gap-2"><Briefcase className="h-5 w-5" /> Beflex Inc — Intern / Research Assistant</span>
+            <span className="flex items-center gap-2"><Briefcase className="h-5 w-5 text-accent" /> Beflex Inc — Intern / Research Assistant</span>
             <span className="text-sm font-normal text-muted-foreground">Oct 2019 – Mar 2020</span>
           </CardTitle>
         </CardHeader>
@@ -180,7 +193,7 @@ const Experience = () => (
       <Card className="rounded-2xl">
         <CardHeader>
           <CardTitle className="flex items-center justify-between">
-            <span className="flex items-center gap-2"><Briefcase className="h-5 w-5" /> COVID Translate — Team Member</span>
+            <span className="flex items-center gap-2"><Briefcase className="h-5 w-5 text-accent" /> COVID Translate — Team Member</span>
             <span className="text-sm font-normal text-muted-foreground"><Anchor href="https://covidtranslate.org/">covidtranslate.org</Anchor></span>
           </CardTitle>
         </CardHeader>
@@ -198,7 +211,7 @@ const Experience = () => (
       <Card className="rounded-2xl">
         <CardHeader>
           <CardTitle className="flex items-center justify-between">
-            <span className="flex items-center gap-2"><Briefcase className="h-5 w-5" /> current ai — News Aggregator (Project Member)</span>
+            <span className="flex items-center gap-2"><Briefcase className="h-5 w-5 text-accent" /> current ai — News Aggregator (Project Member)</span>
             <span className="text-sm font-normal text-muted-foreground">YC outreach & initial funding</span>
           </CardTitle>
         </CardHeader>
@@ -279,10 +292,10 @@ const About = () => (
           <CardTitle>Quick Facts</CardTitle>
         </CardHeader>
         <CardContent className="text-sm space-y-2">
-          <div className="flex items-center gap-2"><MapPin className="h-4 w-4" /> San Diego, CA</div>
-          <div className="flex items-center gap-2"><Mail className="h-4 w-4" /> jop015@ucsd.edu · parkjamalcolm@icloud.com</div>
-          <div className="flex items-center gap-2"><Phone className="h-4 w-4" /> +1 (619) 666-7036</div>
-          <div className="flex items-center gap-2"><Github className="h-4 w-4" /> <Anchor href="https://github.com/MalcolmJAPark">github.com/MalcolmJAPark</Anchor></div>
+          <div className="flex items-center gap-2"><MapPin className="h-4 w-4 text-accent" /> San Diego, CA</div>
+          <div className="flex items-center gap-2"><Mail className="h-4 w-4 text-accent" /> jop015@ucsd.edu · parkjamalcolm@icloud.com</div>
+          <div className="flex items-center gap-2"><Phone className="h-4 w-4 text-accent" /> +1 (619) 666-7036</div>
+          <div className="flex items-center gap-2"><Github className="h-4 w-4 text-accent" /> <Anchor href="https://github.com/MalcolmJAPark">github.com/MalcolmJAPark</Anchor></div>
         </CardContent>
       </Card>
     </div>
@@ -300,23 +313,23 @@ const Contact = () => (
               The fastest way to reach me is by email. I’m open to roles in data/ML engineering, software engineering, and quant-ish analytics.
             </p>
             <div className="flex flex-wrap gap-2">
-              <a href="mailto:jop015@ucsd.edu"><Button className="rounded-2xl"><Mail className="h-4 w-4 mr-2"/>Email</Button></a>
-              <a href="tel:+16196667036"><Button variant="outline" className="rounded-2xl"><Phone className="h-4 w-4 mr-2"/>Call</Button></a>
-              <a href="https://github.com/MalcolmJAPark" target="_blank" rel="noreferrer"><Button variant="outline" className="rounded-2xl"><Github className="h-4 w-4 mr-2"/>GitHub</Button></a>
+              <a href="mailto:jop015@ucsd.edu"><Button className="rounded-2xl">Email</Button></a>
+              <a href="tel:+16196667036"><Button variant="outline" className="rounded-2xl">Call</Button></a>
+              <a href="https://github.com/MalcolmJAPark" target="_blank" rel="noreferrer"><Button variant="outline" className="rounded-2xl">GitHub</Button></a>
             </div>
           </div>
           <form action={`mailto:jop015@ucsd.edu`} method="post" encType="text/plain" className="space-y-3">
             <div className="grid gap-2">
               <label className="text-sm font-medium" htmlFor="name">Name</label>
-              <input id="name" name="name" className="border rounded-xl px-3 py-2" placeholder="Your name" required />
+              <input id="name" name="name" className="border rounded-xl px-3 py-2 focus-visible:shadow-accent" placeholder="Your name" required />
             </div>
             <div className="grid gap-2">
               <label className="text-sm font-medium" htmlFor="email">Email</label>
-              <input id="email" name="email" type="email" className="border rounded-xl px-3 py-2" placeholder="you@example.com" required />
+              <input id="email" name="email" type="email" className="border rounded-xl px-3 py-2 focus-visible:shadow-accent" placeholder="you@example.com" required />
             </div>
             <div className="grid gap-2">
               <label className="text-sm font-medium" htmlFor="message">Message</label>
-              <textarea id="message" name="message" className="border rounded-xl px-3 py-2 min-h-[120px]" placeholder="Hello!" required />
+              <textarea id="message" name="message" className="border rounded-xl px-3 py-2 min-h-[120px] focus-visible:shadow-accent" placeholder="Hello!" required />
             </div>
             <Button type="submit" className="rounded-2xl">Send</Button>
             <p className="text-xs text-muted-foreground">Submitting opens your mail client via <code>mailto:</code> for privacy-friendly, serverless messaging.</p>
@@ -331,7 +344,7 @@ const Footer = () => (
   <footer className="border-t mt-16">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm flex flex-col sm:flex-row items-center justify-between gap-3">
       <div className="flex items-center gap-2">
-        <MapPin className="h-4 w-4" /> UC San Diego · La Jolla, CA
+        <MapPin className="h-4 w-4 text-accent" /> UC San Diego · La Jolla, CA
       </div>
       <div className="text-muted-foreground">© {new Date().getFullYear()} Jooahn (Malcolm) Park. All rights reserved.</div>
     </div>
