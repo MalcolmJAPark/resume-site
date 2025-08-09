@@ -125,6 +125,7 @@ const Skills = () => (
             <li>SQL (PostgreSQL, SQLite)</li>
             <li>C++ (working knowledge)</li>
             <li>Web: React, Tailwind, basic backend</li>
+            <li>Microsoft Excel</li>
           </ul>
         </CardContent>
       </Card>
@@ -247,25 +248,14 @@ const Projects = () => (
           <p><Anchor href="https://github.com/MalcolmJAPark/Mortality-Life-Expectancy-Study">GitHub Repository</Anchor></p>
           <p>This project analyzes mortality data to build life tables, calculate life expectancy, and visualize mortality trends over time.</p>
           <div>
-            <div className="font-medium mb-1">Actuarial relevance</div>
+            <div className="font-medium mb-1">Actuarial Sciences</div>
             <ul className="list-disc pl-5 space-y-1">
               <li>Life tables and mortality analysis are foundational for insurance pricing, pension funding, and risk assessment.</li>
               <li>Demonstrates ability to work with life contingencies and demographic analysis.</li>
-            </ul>
-          </div>
-          <div>
-            <div className="font-medium mb-1">Skills showcased</div>
-            <ul className="list-disc pl-5 space-y-1">
-              <li><span className="font-medium">SQL:</span> Filter and group mortality data (age, gender, region).</li>
-              <li><span className="font-medium">Excel:</span> Build life tables, calculate survival probabilities, visualize mortality curves.</li>
-            </ul>
-          </div>
-          <div>
-            <div className="font-medium mb-1">Project flow</div>
-            <ul className="list-disc pl-5 space-y-1">
               <li>Use public mortality datasets (e.g., Human Mortality Database, CDC).</li>
               <li>Store data in SQL; query mortality rates by cohort.</li>
-              <li>Create Excel charts showing changes in mortality over time.</li>
+              <li>Filter and group mortality data (age, gender, region).</li>
+              <li>Create Excel charts showing changes in mortality over time, calculate survival probabilities, visualize mortality curves.</li>
             </ul>
           </div>
           <div className="flex flex-wrap gap-2 mt-2">
