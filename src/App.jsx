@@ -204,23 +204,6 @@ const Experience = () => (
           </ul>
         </CardContent>
       </Card>
-
-      <Card className="rounded-2xl">
-        <CardHeader>
-          <CardTitle className="flex items-center justify-between">
-            <span className="flex items-center gap-2"><Briefcase className="h-5 w-5 text-accent" /> Current AI News Aggregator — Backend Developer</span>
-            <span className="text-sm font-normal text-muted-foreground">YC outreach & initial funding</span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="text-sm space-y-2">
-          <p>Served as a back-end developer, leveraging Scrapy and BeautifulSoup to efficiently scrape and aggregate news articles from reputable sources.</p>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Utilized large language models (LLMs) to summarize collected content into theoretically unbiased, multi-view digests.</li>
-            <li>Designed summarization pipelines and bias-aware ranking heuristics.</li>
-            <li>Contributed significantly to securing seed-round funding and attracting notable investments from venture capital firms.</li>
-          </ul>
-        </CardContent>
-      </Card>
     </div>
   </Section>
 )
@@ -246,11 +229,13 @@ const Projects = () => (
       </Card>
 
       <Card className="rounded-2xl h-full">
-        <CardHeader><CardTitle>Current AI News Aggregator</CardTitle></CardHeader>
+        <CardHeader><CardTitle>Current AI News Aggregator — Backend Developer</CardTitle></CardHeader>
         <CardContent className="text-sm space-y-3">
           <ul className="list-disc pl-5 space-y-1">
-            <li>Web scrapers + summarizers to present balanced, non-partisan digests.</li>
-            <li>Bias-aware blending of viewpoints; clean UI for fast scanning.</li>
+            <li>Served as a back-end developer, leveraging Scrapy and BeautifulSoup to efficiently scrape and aggregate news articles from reputable sources.</li>
+            <li>Utilized large language models (LLMs) to summarize collected content into theoretically unbiased, multi-view digests.</li>
+            <li>Designed and implemented automated pipelines for article normalization, bias-aware ranking, and large-scale data ingestion.</li>
+            <li>Contributed significantly to securing seed-round funding and attracting notable investments from venture capital firms.</li>
           </ul>
           <div className="flex flex-wrap gap-2 mt-2">
             <Pill>Python</Pill><Pill>BeautifulSoup/Requests</Pill><Pill>NLP</Pill><Pill>React</Pill>
