@@ -90,7 +90,7 @@ const Education = () => (
         </CardHeader>
         <CardContent className="space-y-2">
           <div className="font-medium">B.S. in Mathematics (Computer Science focus) · Data Science minor</div>
-          <div>GPA: 3.782 (one class remaining)</div>
+          <div>GPA: 3.054 (one class remaining)</div>
           <div className="text-sm text-muted-foreground">Relevant: Algorithms, Probability/Stats, ML, Data Engineering, Econometrics.</div>
         </CardContent>
       </Card>
@@ -177,6 +177,21 @@ const Experience = () => (
       <Card className="rounded-2xl">
         <CardHeader>
           <CardTitle className="flex items-center justify-between">
+            <span className="flex items-center gap-2"><Briefcase className="h-5 w-5 text-accent" /> ROK Military — Private, Communications Branch</span>
+            <span className="text-sm font-normal text-muted-foreground">Oct 2023 – Apr 2024</span>
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="text-sm space-y-2">
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Completed 5 weeks of intensive basic training as part of mandatory service for Korean citizens.</li>
+            <li>Served in the communications branch, tasked with data management and website maintenance/operation for internal systems.</li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      <Card className="rounded-2xl">
+        <CardHeader>
+          <CardTitle className="flex items-center justify-between">
             <span className="flex items-center gap-2"><Briefcase className="h-5 w-5 text-accent" /> COVID Translate — Team Member</span>
             <span className="text-sm font-normal text-muted-foreground"><Anchor href="https://covidtranslate.org/">covidtranslate.org</Anchor></span>
           </CardTitle>
@@ -193,15 +208,16 @@ const Experience = () => (
       <Card className="rounded-2xl">
         <CardHeader>
           <CardTitle className="flex items-center justify-between">
-            <span className="flex items-center gap-2"><Briefcase className="h-5 w-5 text-accent" /> current ai — News Aggregator (Project Member)</span>
+            <span className="flex items-center gap-2"><Briefcase className="h-5 w-5 text-accent" /> Current AI News Aggregator — Backend Developer</span>
             <span className="text-sm font-normal text-muted-foreground">YC outreach & initial funding</span>
           </CardTitle>
         </CardHeader>
         <CardContent className="text-sm space-y-2">
-          <p>Built a news aggregator leveraging AI to summarize articles from outlets with diverse political leanings; combined multiple viewpoints to reduce bias and present balanced coverage.</p>
+          <p>Served as a back-end developer, leveraging Scrapy and BeautifulSoup to efficiently scrape and aggregate news articles from reputable sources.</p>
           <ul className="list-disc pl-5 space-y-1">
-            <li>Automated scraper scripts to collect and normalize article data.</li>
+            <li>Utilized large language models (LLMs) to summarize collected content into theoretically unbiased, multi-view digests.</li>
             <li>Designed summarization pipelines and bias-aware ranking heuristics.</li>
+            <li>Contributed significantly to securing seed-round funding and attracting notable investments from venture capital firms.</li>
           </ul>
         </CardContent>
       </Card>
@@ -230,7 +246,7 @@ const Projects = () => (
       </Card>
 
       <Card className="rounded-2xl h-full">
-        <CardHeader><CardTitle>current ai — Multi-view News Summarizer</CardTitle></CardHeader>
+        <CardHeader><CardTitle>Current AI News Aggregator</CardTitle></CardHeader>
         <CardContent className="text-sm space-y-3">
           <ul className="list-disc pl-5 space-y-1">
             <li>Web scrapers + summarizers to present balanced, non-partisan digests.</li>
