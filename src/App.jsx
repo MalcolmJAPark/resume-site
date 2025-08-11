@@ -90,7 +90,7 @@ const Education = () => (
         </CardHeader>
         <CardContent className="space-y-2">
           <div className="font-medium">B.S. in Mathematics (Computer Science focus) · Data Science minor</div>
-          <div>GPA: 3.452 (one class remaining)</div>
+          <div>GPA: 3.054 (one class remaining)</div>
           <div className="text-sm text-muted-foreground">Relevant: Algorithms, Probability/Stats, ML, Data Engineering, Econometrics.</div>
         </CardContent>
       </Card>
