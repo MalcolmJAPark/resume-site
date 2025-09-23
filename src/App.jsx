@@ -159,3 +159,220 @@ const Experience = () => (
     <div className="grid gap-6">
       <Card className="rounded-2xl">
         <CardHeader>
+          <CardTitle className="flex items-center justify-between">
+            <span className="flex items-center gap-2"><Briefcase className="h-5 w-5 text-accent" /> Beflex Inc — Intern / Research Assistant</span>
+            <span className="text-sm font-normal text-muted-foreground">Oct 2019 – Mar 2020</span>
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="text-sm space-y-2">
+          <p>Contributed to wearable technology R&D by reviewing products and writing performance reports. Collaborated with bio & mechanical engineers to analyze GAIT characteristics to improve distance, speed, step-count, incline/decline, and caloric estimation.</p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Built analysis pipelines to evaluate device accuracy across activities.</li>
+            <li>Translated findings into actionable recommendations for firmware teams.</li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      <Card className="rounded-2xl">
+        <CardHeader>
+          <CardTitle className="flex items-center justify-between">
+            <span className="flex items-center gap-2"><Briefcase className="h-5 w-5 text-accent" /> ROK Military — Private, Communications Branch</span>
+            <span className="text-sm font-normal text-muted-foreground">Oct 2023 – Apr 2024</span>
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="text-sm space-y-2">
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Completed 5 weeks of intensive basic training as part of mandatory service for Korean citizens.</li>
+            <li>Served in the communications branch, tasked with data management and website maintenance/operation for internal systems.</li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      <Card className="rounded-2xl">
+        <CardHeader>
+          <CardTitle className="flex items-center justify-between">
+            <span className="flex items-center gap-2"><Briefcase className="h-5 w-5 text-accent" /> COVID Translate — Team Member</span>
+            <span className="text-sm font-normal text-muted-foreground"><Anchor href="https://covidtranslate.org/">covidtranslate.org</Anchor></span>
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="text-sm space-y-2">
+          <p>Participated in translating official Korean CDC documents into English, Russian, French, and Spanish to broaden access to critical public health information during COVID-19.</p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Helped program the main homepage and publish translated documents.</li>
+            <li>Coordinated with a distributed team to ensure quality and speed.</li>
+          </ul>
+        </CardContent>
+      </Card>
+    </div>
+  </Section>
+)
+
+const Projects = () => (
+  <Section id="projects" title="Projects">
+    <div className="grid md:grid-cols-2 gap-6">
+      <Card className="rounded-2xl h-full">
+        <CardHeader><CardTitle>Dynamic Claims Modeling with HMMs for Reserving</CardTitle></CardHeader>
+        <CardContent className="text-sm space-y-3">
+          <p><Anchor href="https://github.com/MalcolmJAPark/Dynamic-Claims-Modeling-with-Hidden-Markov-Models-for-Enhanced-Reserving-Accuracy">GitHub Repository</Anchor></p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Identified latent risk states from insurance claims using HMMs with state-dependent Poisson (frequency) and lognormal (severity).</li>
+            <li>Processed FEMA NFIP claims (&gt;2M records) with SQL and Python for policy-level quarterly aggregation and outlier handling.</li>
+            <li>Trained via EM to maximize log-likelihood; forecasted future counts/losses with Monte Carlo simulations.</li>
+            <li>Estimated IBNR reserves using simulated reporting delays; compared against chain-ladder reserving.</li>
+            <li>Delivered predictive reserve distributions (means, percentiles) and visual analytics to quantify uncertainty.</li>
+          </ul>
+          <div className="flex flex-wrap gap-2 mt-2">
+            <Pill>Python</Pill><Pill>numpy/pandas</Pill><Pill>scipy</Pill><Pill>matplotlib</Pill><Pill>hmmlearn</Pill><Pill>SQL</Pill>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="rounded-2xl h-full">
+        <CardHeader><CardTitle>Current AI News Aggregator — Backend Developer</CardTitle></CardHeader>
+        <CardContent className="text-sm space-y-3">
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Served as a back-end developer, leveraging Scrapy and BeautifulSoup to efficiently scrape and aggregate news articles from reputable sources.</li>
+            <li>Utilized large language models (LLMs) to summarize collected content into theoretically unbiased, multi-view digests.</li>
+            <li>Designed and implemented automated pipelines for article normalization, bias-aware ranking, and large-scale data ingestion.</li>
+            <li>Contributed significantly to securing seed-round funding and attracting notable investments from venture capital firms.</li>
+          </ul>
+          <div className="flex flex-wrap gap-2 mt-2">
+            <Pill>Python</Pill><Pill>BeautifulSoup/Requests</Pill><Pill>NLP</Pill><Pill>React</Pill>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* NEW PROJECT: inkverify Method */}
+      <Card className="rounded-2xl h-full">
+        <CardHeader><CardTitle>inkverify Method</CardTitle></CardHeader>
+        <CardContent className="text-sm space-y-3">
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Built a custom cellular automaton simulating ink expansion on a 2D grid with von Neumann neighborhood rules.</li>
+            <li>Implemented recursive growth with wrap boundaries and one-write semantics for efficient state updates.</li>
+            <li>Designed a verification protocol where the state at time <em>t</em> is recomputed and checked for equality.</li>
+            <li>Optimized memory via collapsing verified inner rings and enabling early termination on mismatches.</li>
+            <li>Rendered final states to PNG/GIF for visualization and reproducibility.</li>
+          </ul>
+          <div className="flex flex-wrap gap-2 mt-2">
+            <Pill>Python</Pill><Pill>NumPy</Pill><Pill>Algorithm Design</Pill><Pill>Rendering</Pill>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="rounded-2xl h-full md:col-span-2">
+        <CardHeader><CardTitle>Mortality Life Expectancy Study</CardTitle></CardHeader>
+        <CardContent className="text-sm space-y-3">
+          <p><Anchor href="https://github.com/MalcolmJAPark/Mortality-Life-Expectancy-Study">GitHub Repository</Anchor></p>
+          <p>This project analyzes mortality data to build life tables, calculate life expectancy, and visualize mortality trends over time.</p>
+          <div>
+            <div className="font-medium mb-1">Actuarial Sciences</div>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Life tables and mortality analysis are foundational for insurance pricing, pension funding, and risk assessment.</li>
+              <li>Demonstrates ability to work with life contingencies and demographic analysis.</li>
+              <li>Use public mortality datasets (e.g., Human Mortality Database, CDC).</li>
+              <li>Store data in SQL; query mortality rates by cohort.</li>
+              <li>Filter and group mortality data (age, gender, region).</li>
+              <li>Create Excel charts showing changes in mortality over time, calculate survival probabilities, visualize mortality curves.</li>
+            </ul>
+          </div>
+          <div className="flex flex-wrap gap-2 mt-2">
+            <Pill>SQL</Pill><Pill>Excel</Pill><Pill>Actuarial Science</Pill><Pill>Life Tables</Pill>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  </Section>
+)
+
+const About = () => (
+  <Section id="about" title="About">
+    <div className="grid lg:grid-cols-3 gap-8">
+      <div className="lg:col-span-2">
+        <p className="text-base leading-relaxed">
+          I'm a recent UC San Diego graduate (B.S. Mathematics with a focus in Computer Science, Data Science minor) passionate about building data-intensive systems that are both rigorous and usable. I enjoy probabilistic modeling, interpretable ML, and shipping polished web tools. I speak English and Korean fluently. Outside of work, I am an avid reader and enjoy jogging. I am also pursuing SOA examination certifications to further my actuary studies.
+        </p>
+      </div>
+      <Card className="rounded-2xl">
+        <CardHeader><CardTitle>Quick Facts</CardTitle></CardHeader>
+        <CardContent className="text-sm space-y-2">
+          <div className="flex items-center gap-2"><MapPin className="h-4 w-4 text-accent" /> San Diego, CA</div>
+          <div className="flex items-center gap-2"><Mail className="h-4 w-4 text-accent" /> jop015@ucsd.edu · parkjamalcolm@icloud.com</div>
+          <div className="flex items-center gap-2"><Phone className="h-4 w-4 text-accent" /> +1 (619) 666-7036</div>
+          <div className="flex items-center gap-2"><Github className="h-4 w-4 text-accent" /> <Anchor href="https://github.com/MalcolmJAPark">github.com/MalcolmJAPark</Anchor></div>
+        </CardContent>
+      </Card>
+    </div>
+  </Section>
+)
+
+const Contact = () => (
+  <Section id="contact" title="Contact">
+    <Card className="rounded-2xl">
+      <CardContent className="p-6">
+        <div className="grid md:grid-cols-2 gap-6 items-center">
+          <div className="space-y-3">
+            <h3 className="text-xl font-semibold">Let’s connect</h3>
+            <p className="text-sm text-muted-foreground">
+              The fastest way to reach me is by email. I’m open to roles in data/ML engineering, software engineering, and quant-ish analytics.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <a href="mailto:jop015@ucsd.edu"><Button className="rounded-2xl">Email</Button></a>
+              <a href="tel:+16196667036"><Button variant="outline" className="rounded-2xl">Call</Button></a>
+              <a href="https://github.com/MalcolmJAPark" target="_blank" rel="noreferrer"><Button variant="outline" className="rounded-2xl">GitHub</Button></a>
+            </div>
+          </div>
+          <form action={`mailto:jop015@ucsd.edu`} method="post" encType="text/plain" className="space-y-3">
+            <div className="grid gap-2">
+              <label className="text-sm font-medium" htmlFor="name">Name</label>
+              <input id="name" name="name" className="border rounded-xl px-3 py-2 focus-visible:shadow-accent" placeholder="Your name" required />
+            </div>
+            <div className="grid gap-2">
+              <label className="text-sm font-medium" htmlFor="email">Email</label>
+              <input id="email" name="email" type="email" className="border rounded-xl px-3 py-2 focus-visible:shadow-accent" placeholder="you@example.com" required />
+            </div>
+            <div className="grid gap-2">
+              <label className="text-sm font-medium" htmlFor="message">Message</label>
+              <textarea id="message" name="message" className="border rounded-xl px-3 py-2 min-h-[120px] focus-visible:shadow-accent" placeholder="Hello!" required />
+            </div>
+            <Button type="submit" className="rounded-2xl">Send</Button>
+            <p className="text-xs text-muted-foreground">Submitting opens your mail client via <code>mailto:</code> for privacy-friendly, serverless messaging.</p>
+          </form>
+        </div>
+      </CardContent>
+    </Card>
+  </Section>
+)
+
+const Footer = () => (
+  <footer className="border-t mt-16">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div className="flex items-center gap-2">
+        <MapPin className="h-4 w-4 text-accent" /> UC San Diego · La Jolla, CA
+      </div>
+      <div className="text-muted-foreground">© {new Date().getFullYear()} Jooahn (Malcolm) Park. All rights reserved.</div>
+    </div>
+  </footer>
+)
+
+const PrintBar = () => (
+  <div className="hidden print:block text-sm text-center py-2">
+    Printable resume generated from site — for latest, visit <span className="underline">github.com/MalcolmJAPark</span>
+  </div>
+)
+
+export default function App() {
+  return (
+    <div className="min-h-screen font-sans">
+      <Header />
+      <Hero />
+      <About />
+      <Education />
+      <Skills />
+      <Experience />
+      <Projects />
+      <Contact />
+      <Footer />
+      <PrintBar />
+    </div>
+  )
+}
